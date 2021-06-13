@@ -1,6 +1,6 @@
 # Gumshoe Habit Tracker
 
-[![License](https://img.shields.io/github/license/philipcsaplar/gumshoe)](https://github.com/philipcsaplar/gumshoe/blob/main/LICENSE.md)
+[![License](https://img.shields.io/github/license/philipcsaplar/gumshoe-cli)](https://github.com/philipcsaplar/gumshoe-cli/blob/master/LICENSE)
 
 Your habit tracking command line tool.
 

@@ -1,5 +1,8 @@
 # Gumshoe Habit Tracker
+
+[![Version](https://img.shields.io/pypi/v/gumshoe-cli)](https://img.shields.io/pypi/v/gumshoe-cli)
 [![License](https://img.shields.io/github/license/philipcsaplar/gumshoe-cli)](https://github.com/philipcsaplar/gumshoe-cli/blob/master/LICENSE)
+
 Your habit tracking command line tool.
 
 ---

@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="gumshoe-cli",
-    version="1.1",
+    version="1.1.2",
     description="Your habit tracking command line tool.",
     long_description="Your habit tracking command line tool.",
     url="",
@@ -16,7 +16,7 @@ setup(
     entry_points={
         "console_scripts": ["gumshoe=gumshoe.main:cli"],
     },
-    install_requires=["click", "terminaltables"],
+    install_requires=["sqlite3", "setuptools", "click", "terminaltables"],
 
     license="MIT",
     classifiers=[

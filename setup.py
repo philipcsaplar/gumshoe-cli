@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="gumshoe-cli",
-    version="1.1.4",
+    version="1.1.6",
     description="Your habit tracking command line tool.",
     long_description="Your habit tracking command line tool.",
     url="https://github.com/philipcsaplar/gumshoe-cli/tree/master/gumshoe",
@@ -29,11 +29,6 @@ setup(
         "Operating System :: Microsoft",
         "Operating System :: POSIX :: Linux",
         "Programming Language :: Python :: 3 :: Only",
-        "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.2",
-        "Programming Language :: Python :: 3.3",
-        "Programming Language :: Python :: 3.4",
-        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Topic :: Utilities",

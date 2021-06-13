@@ -58,11 +58,11 @@ def cli(name,more,period):
             table_rows = [table_title]
             progress = ""
             for x in group["activities"]:
-                if x is "yes":
+                if x == "yes":
                     column_text = click.style(COMPLETE, fg="green")
-                elif x is "part":
+                elif x == "part":
                     column_text = click.style(PARTIAL_COMPLETE)
-                elif x is "no":
+                elif x == "no":
                     column_text = click.style(NOT_COMPLETE)
                 progress += column_text + " "
 

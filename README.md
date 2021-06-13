@@ -160,7 +160,7 @@ Options:
 > gumshoe show -p all
 
 ┌──────┬────────┬─────────────┐
-│ Name │ Target │ Periodicity │
+│ Name │ Target │ Period      │
 ├──────┼────────┼─────────────┤
 │ gym  │ 2      │ weekly      │
 └──────┴────────┴─────────────┘

@@ -17,12 +17,26 @@ def test_complete():
     assert response.exit_code == 0
     assert "Habit brush-teeth completed 1 times" in response.output
 
-def test_show():
+def test_show_name():
     runner = CliRunner()
     response = runner.invoke(show.cli, ["-n", "brush-teeth"])
     assert response.exit_code == 0
     #make sure headers and one completed mark is found in output
     assert "Name" and "Target" and "Current Streak" and "Longest Streak" and u"\u25A0" in response.output
+
+def test_show_period():
+    runner = CliRunner()
+    response = runner.invoke(show.cli, ["-p", "all"])
+    assert response.exit_code == 0
+    #make sure headers and one completed mark is found in output
+    assert "Name" and "Target" and "Period" in response.output
+
+def test_show_more():
+    runner = CliRunner()
+    response = runner.invoke(show.cli, ["-n", "brush-teeth", "-m"])
+    assert response.exit_code == 0
+    #make sure headers and one completed mark is found in output
+    assert "Name" and "Target" and "Streak" and "Period" in response.output
 
 def test_remove():
     runner = CliRunner()

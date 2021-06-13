@@ -88,7 +88,7 @@ def cli(name,more,period):
                 click.echo("There are no defined habits within this period")
                 sys.exit()
 
-            table_title = ["Name", "Target", "Periodicity"]
+            table_title = ["Name", "Target", "Period"]
             table_rows = [table_title]
 
             for data in table_info:

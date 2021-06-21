@@ -4,7 +4,12 @@ import sqlite3
 from sqlite3 import Error
 import os
 
-database = os.path.join(os.path.dirname(__file__), "../database/gumshoe.db")
+
+if os.path.exists(os.path.join(os.path.dirname(__file__), "../database/test_gumshoe.db")):
+    database = os.path.join(os.path.dirname(__file__), "../database/test_gumshoe.db")
+else:
+    database = os.path.join(os.path.dirname(__file__), "../database/gumshoe.db")
+
 logging.basicConfig(filename=os.path.join(os.path.dirname(__file__), "../logs/app.log"), filemode='a',
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
@@ -39,7 +44,7 @@ class Database:
             print(e)
 
     def setup(self):
-        sql_create_projects_table = """ CREATE TABLE IF NOT EXISTS habits (
+        sql_create_habits_table = """ CREATE TABLE IF NOT EXISTS habits (
                                             id integer PRIMARY KEY AUTOINCREMENT,
                                             name text NOT NULL UNIQUE,
                                             quota integer NOT NULL,
@@ -47,7 +52,7 @@ class Database:
                                             created_at text NOT NULL
                                      ); """
 
-        sql_create_tasks_table = """CREATE TABLE IF NOT EXISTS activity (
+        sql_create_activity_table = """CREATE TABLE IF NOT EXISTS activity (
                                         id integer PRIMARY KEY AUTOINCREMENT,
                                         habit_id integer NOT NULL,
                                         created_at text NOT NULL,
@@ -59,13 +64,21 @@ class Database:
 
         # create tables
         if conn is not None:
-            # create projects table
-            self.create_table(conn, sql_create_projects_table)
+            # create habits table
+            self.create_table(conn, sql_create_habits_table)
 
-            # create tasks table
-            self.create_table(conn, sql_create_tasks_table)
+            # create activities table
+            self.create_table(conn, sql_create_activity_table)
         else:
             print("Error! cannot create the database connection.")
+
+    def remove_test_db(self):
+        if os.path.exists(os.path.join(os.path.dirname(__file__), "../database/test_gumshoe.db")):
+            database = os.path.join(os.path.dirname(__file__), "../database/test_gumshoe.db")
+            os.remove(database)
+            print("Test Database remove successfully!")
+        else:
+            print("No Test Database found.")
 
 
 class HabitModel(Database):

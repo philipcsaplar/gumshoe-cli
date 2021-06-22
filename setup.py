@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="gumshoe-cli",
-    version="1.1.8",
+    version="1.1.9",
     description="Your habit tracking command line tool.",
     long_description="The GumShoe CLI app will allow you to create, complete, show and remove habits. its and easy to use command line application that stores your created habit and allows you to analyse their data. Also shows you when you have created a streak which is when you have completed your habit a certain amount of times in a row.",
     url="https://github.com/philipcsaplar/gumshoe-cli/tree/master/gumshoe",
